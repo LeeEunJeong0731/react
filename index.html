@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React with Vanilla JavaScript</title>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script>
+// React 컴포넌트 정의
+function Greeting({ name }) {
+  const divElement = document.createElement('div');
+  divElement.innerText = `Hello, ${name}!`;
+  return divElement;
+}
+
+// ReactDOM.render 메서드 모방
+function render(element, container) {
+  container.innerHTML = '';
+  container.appendChild(element);
+}
+
+// 컴포넌트 인스턴스 생성
+const greetingElement = Greeting({ name: 'YourName' });
+
+// 렌더링
+const rootContainer = document.getElementById('root');
+render(greetingElement, rootContainer);
+
+</script>
+
+</body>
+</html>
